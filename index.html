@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- OPTIMISATION SEO LOCAL : Titre avec Vannes -->
+    <title>Harmonie & Vitalité | Médecine Chinoise Vannes (56)</title>
+    <!-- OPTIMISATION SEO : Description avec mots-clés locaux -->
+    <meta name="description" content="Cabinet de Médecine Traditionnelle Chinoise à Vannes. Acupuncture, Ventouses, Tui Na. Retrouvez votre équilibre énergétique dans le Morbihan (56).">
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tcm-primary': '#4A6741',   /* Vert bambou sombre */
+                        'tcm-secondary': '#8DA399', /* Vert sauge doux */
+                        'tcm-bg': '#F9F7F2',        /* Blanc cassé/parchemin */
+                        'tcm-accent': '#C25E00',    /* Terre/Orange brûlé discret */
+                        'tcm-text': '#2C3333',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Styles personnalisés pour des effets subtils */
+        .bg-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animation douce d'apparition */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="bg-tcm-bg text-tcm-text font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fas fa-ying-yang text-tcm-primary text-3xl"></i>
+                    <div>
+                        <h1 class="font-serif text-2xl font-bold text-tcm-primary leading-none">Harmonie</h1>
+                        <p class="text-xs text-tcm-secondary tracking-widest uppercase">Médecine Chinoise</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#accueil" class="text-tcm-text hover:text-tcm-primary transition font-medium">Accueil</a>
+                    <a href="#decouvrir" class="text-tcm-text hover:text-tcm-primary transition font-medium">Découvrir</a>
+                    <a href="#services" class="text-tcm-text hover:text-tcm-primary transition font-medium">Soins</a>
+                    <a href="#praticien" class="text-tcm-text hover:text-tcm-primary transition font-medium">Votre Praticien</a>
+                    <a href="#contact" class="bg-tcm-primary text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition shadow-md">Prendre RDV</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-tcm-text hover:text-tcm-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#accueil" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-tcm-primary hover:bg-gray-50">Accueil</a>
+                <a href="#decouvrir" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-tcm-primary hover:bg-gray-50">Découvrir la MTC</a>
+                <a href="#services" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-tcm-primary hover:bg-gray-50">Les Soins</a>
+                <a href="#praticien" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-tcm-primary hover:bg-gray-50">Le Praticien</a>
+                <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-bold text-tcm-primary bg-green-50">Prendre Rendez-vous</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="bg-hero h-screen flex items-center justify-center relative">
+        <div class="text-center text-white px-4 max-w-4xl mx-auto fade-in-up">
+            <h2 class="font-serif text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">Retrouvez votre équilibre vital</h2>
+            <p class="text-lg md:text-2xl mb-8 font-light drop-shadow-md text-gray-100 max-w-2xl mx-auto">
+                Accompagnement thérapeutique par la Médecine Traditionnelle Chinoise à Vannes.
+                Une approche globale pour le corps et l'esprit.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-tcm-primary hover:bg-green-800 text-white font-semibold py-3 px-8 rounded-full transition shadow-lg text-lg transform hover:scale-105">
+                    Prendre rendez-vous
+                </a>
+                <a href="#decouvrir" class="bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/50 font-semibold py-3 px-8 rounded-full transition shadow-lg text-lg">
+                    Découvrir l'approche
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#decouvrir" class="text-white opacity-80 hover:opacity-100">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section Découvrir / Pédagogie -->
+    <section id="decouvrir" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-tcm-accent font-bold tracking-wider uppercase text-sm">Comprendre</span>
+                <h2 class="font-serif text-4xl text-tcm-primary mt-2 mb-4">Qu'est-ce que la Médecine Chinoise ?</h2>
+                <div class="w-24 h-1 bg-tcm-secondary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Plus qu'une médecine, c'est un art de vivre millénaire qui considère l'être humain dans sa globalité. Elle ne traite pas seulement le symptôme, mais cherche à rétablir l'harmonie entre le corps, l'esprit et l'environnement.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Concept 1 -->
+                <div class="text-center p-6 rounded-xl bg-tcm-bg hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-tcm-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-tcm-primary">
+                        <i class="fas fa-project-diagram text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-2">Approche Holistique</h3>
+                    <p class="text-gray-600 text-sm">Nous traitons la personne, pas seulement la maladie. Chaque symptôme est un message du corps qu'il faut décoder dans son ensemble.</p>
+                </div>
+                
+                <!-- Concept 2 -->
+                <div class="text-center p-6 rounded-xl bg-tcm-bg hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-tcm-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-tcm-primary">
+                        <i class="fas fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-2">L'Énergie (Qi)</h3>
+                    <p class="text-gray-600 text-sm">La libre circulation de l'énergie vitale est la clé de la santé. Nous travaillons à lever les blocages pour restaurer votre vitalité.</p>
+                </div>
+
+                <!-- Concept 3 -->
+                <div class="text-center p-6 rounded-xl bg-tcm-bg hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-tcm-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-tcm-primary">
+                        <i class="fas fa-leaf text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-2">Prévention</h3>
+                    <p class="text-gray-600 text-sm">"Le sage traite la maladie avant qu'elle n'apparaisse." La MTC est idéale pour renforcer l'immunité et prévenir les déséquilibres.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-tcm-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-tcm-accent font-bold tracking-wider uppercase text-sm">Mes Pratiques</span>
+                <h2 class="font-serif text-4xl text-tcm-primary mt-2 mb-4">Les Outils Thérapeutiques</h2>
+                <div class="w-24 h-1 bg-tcm-secondary mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-sm">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                         <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop" alt="Acupuncture" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-tcm-primary mb-3">Acupuncture</h3>
+                        <p class="text-gray-600 mb-4">Stimulation de points précis sur les méridiens à l'aide d'aiguilles fines et stériles pour réguler l'énergie.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Douleurs chroniques</li>
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Stress & Anxiété</li>
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Troubles digestifs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-sm">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac927acdbc?q=80&w=1974&auto=format&fit=crop" alt="Ventouses" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-tcm-primary mb-3">Ventouses (Cupping)</h3>
+                        <p class="text-gray-600 mb-4">Technique de succion permettant de détoxifier, d'activer la circulation sanguine et de dénouer les tensions musculaires.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Douleurs dorsales</li>
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Récupération sportive</li>
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Affections respiratoires</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-sm">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=2070&auto=format&fit=crop" alt="Massage Tui Na" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-tcm-primary mb-3">Massage Tui Na</h3>
+                        <p class="text-gray-600 mb-4">Massage thérapeutique dynamique utilisant des pressions et des mobilisations pour réharmoniser le corps.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Raideurs articulaires</li>
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Fatigue générale</li>
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Maux de tête</li>
+                        </ul>
+                    </div>
+                </div>
+                 <!-- Service 4 -->
+                 <div class="service-card bg-white rounded-lg overflow-hidden shadow-sm">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1564593739506-c8b1853d997d?q=80&w=2070&auto=format&fit=crop" alt="Diététique" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-tcm-primary mb-3">Diététique Chinoise</h3>
+                        <p class="text-gray-600 mb-4">Conseils nutritionnels adaptés à votre constitution énergétique. "Que ton aliment soit ton premier médicament".</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Perte de poids</li>
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Digestion difficile</li>
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Baisse d'énergie</li>
+                        </ul>
+                    </div>
+                </div>
+                 <!-- Service 5 -->
+                 <div class="service-card bg-white rounded-lg overflow-hidden shadow-sm">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1887&auto=format&fit=crop" alt="Phytothérapie" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-tcm-primary mb-3">Pharmacopée</h3>
+                        <p class="text-gray-600 mb-4">Utilisation de plantes et minéraux spécifiques pour soutenir le traitement et rétablir l'équilibre interne en profondeur.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Troubles hormonaux</li>
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Insomnie</li>
+                            <li><i class="fas fa-check text-tcm-secondary mr-2"></i>Soutien immunitaire</li>
+                        </ul>
+                    </div>
+                </div>
+                 <!-- Service 6 -->
+                 <div class="service-card bg-white rounded-lg overflow-hidden shadow-sm flex flex-col items-center justify-center text-center p-8 border-2 border-dashed border-tcm-secondary/30">
+                    <i class="fas fa-phone-alt text-4xl text-tcm-secondary mb-4"></i>
+                    <h3 class="font-serif text-xl text-tcm-primary mb-2">Besoin de conseils ?</h3>
+                    <p class="text-gray-500 text-sm mb-4">Vous ne savez pas quel soin choisir ? Contactez-moi pour en discuter.</p>
+                    <a href="#contact" class="text-tcm-primary font-bold hover:underline">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Praticien Section -->
+    <section id="praticien" class="py-20 bg-white">
+        <div class="max-w-7xl mx
